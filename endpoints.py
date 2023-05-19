@@ -1,18 +1,9 @@
 import subprocess
 from sense_hat import SenseHat
+from enum import Enum
+from frames import Response, DisplayMode, config
 
 sense = SenseHat()
-
-class Response:
-    message = ""
-    error = False
-    display = True
-
-    def __init__(self, message, error = False, display = True):
-        self.message = message
-        self.error = error
-        self.display = display
-
 
 def echo(command):
     if (len(command.args) == 0):
@@ -20,7 +11,7 @@ def echo(command):
     response = ""
     for arg in command.args:
         response += arg + " "
-    return Response(response)
+    return Response(response, display=True)
 
 
 def get(command):
@@ -41,17 +32,42 @@ def get(command):
         ip = ip.replace("\\n", "")
         ip = ip.replace("'", "")
         return Response(ip)
+    
+    elif (res == "config"):
+        return Response(config.dump())
 
     else:
         return Response("get: ressource not found: " + res, True)
 
 
 
+def configure(command):
+    if (len(command.args) != 2):
+        return Response("configure: there must be two arguments", True)
+    
+    option = command.args[0].lower()
+    value = command.args[1].lower()
 
-
+    if (option == "display_mode"):
+        if (value == "always"):
+            config.display_mode = DisplayMode.ALWAYS
+        elif (value == "never"):
+            config.display_mode = DisplayMode.NEVER
+        elif (value == "default"):
+            config.display_mode = DisplayMode.DEFAULT
+        elif (value == "show_errors"):
+            config.display_mode = DisplayMode.SHOW_ERRORS
+        else:
+            return Response("configure display_mode: unrecognized value \""+value+"\"", True)
+    
+    else:
+        return Response("configure: unrecognized option \""+option+"\"", True)
+    
+    return Response("config updated")
 
 
 endpointsDict = {
     "echo" : echo,
-    "get"  : get
+    "get"  : get,
+    "configure" : configure
 }
