@@ -1,9 +1,8 @@
 import subprocess
-from sense_hat import SenseHat
-from enum import Enum
-from frames import Response, DisplayMode, config
 
-sense = SenseHat()
+from frames.config import DisplayMode, config
+from frames.response import Response
+import interface.hardware as hardware
 
 def echo(command):
     if (len(command.args) == 0):
@@ -20,11 +19,11 @@ def get(command):
 
     res = command.args[0]
     if (res == "temperature"):
-        return Response(str(int(sense.get_temperature())) + " degrees")
+        return Response(str(int(hardware.get_temperature())) + " degrees")
     elif (res == "humidity"):
-        return Response(str(int(sense.get_humidity())) + "%")
+        return Response(str(int(hardware.get_humidity())) + "%")
     elif (res == "pressure"):
-        return Response(str(int(sense.get_pressure())) + " milibars")
+        return Response(str(int(hardware.get_pressure())) + " milibars")
     
     elif (res == "ip"):
         ip = str(subprocess.check_output(("hostname", "-I")))

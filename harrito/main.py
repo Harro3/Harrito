@@ -1,11 +1,28 @@
 import discord
-from harrito_utils import process_msg, sense_init
 import os
 from dotenv import load_dotenv
+import sys
+
+from interface.hardware import *
+from frames.command import Command
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 OWNER = os.getenv('BOT_OWNER_ID')
+
+
+async def process_msg(message):
+    comm = Command(message)
+    response = await comm.resolve()
+    col = (255, 255, 255)
+    if (response.error):
+        response.message = "ERROR: " + response.message
+        col = (255, 0, 0)
+
+    await comm.message.channel.send(response.message)
+    if (response.display):
+        display_message(response.message, col)
+
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -28,7 +45,7 @@ class MyClient(discord.Client):
         await process_msg(message)
 
 client = MyClient(intents=discord.Intents.default())
-sense_init()
+hardware_init()
 
 client.run(TOKEN)
 
