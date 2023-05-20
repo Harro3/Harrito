@@ -9,13 +9,15 @@ class DisplayMode(Enum):
 
 class Config:
     display_mode = DisplayMode.DEFAULT
+    text_color = (255, 255, 255)
 
     def dump(self):
         res = "```\n"
         
-        res += "display mode: " + self.display_mode.name
+        res += "display mode: " + self.display_mode.name + "\n"
+        res += "text color  : " + str(self.text_color) + "\n"
         
-        res += "\n```"
+        res += "```"
 
         return res
 

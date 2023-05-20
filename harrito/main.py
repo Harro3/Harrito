@@ -5,6 +5,7 @@ import sys
 
 from interface.hardware import *
 from frames.command import Command
+from frames.config import config
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -14,7 +15,7 @@ WHITELIST = os.getenv('WHITELIST').split(" ")
 async def process_msg(message):
     comm = Command(message)
     response = await comm.resolve()
-    col = (255, 255, 255)
+    col = config.text_color
     if (response.error):
         response.message = "ERROR: " + response.message
         col = (255, 0, 0)

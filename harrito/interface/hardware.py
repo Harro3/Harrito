@@ -29,3 +29,10 @@ def get_humidity():
 
 def get_pressure():
     return sense.get_pressure()
+
+def alert():
+    for i in range(5):
+        sense.clear((255,255,255))
+        sleep(0.2)
+        sense.clear()
+        sleep(0.2)
