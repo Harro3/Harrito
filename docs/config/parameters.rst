@@ -12,3 +12,11 @@ display_mode
     * ``always`` - **All** responses will be displayed
     * ``show_errors`` - On top of default, **all errors** will be displayed
 
+text_color
+==========
+    ``configure text_color <red> <green> <blue>``
+
+    Changes the color of the text displayed on the sense_hat from rgb values.
+    For example:
+
+    * ``configure text_color 0 255 0`` - Sets the color to green

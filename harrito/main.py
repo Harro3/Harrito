@@ -45,7 +45,7 @@ class MyClient(discord.Client):
             message.content = message.content[1:]
         
         if (not str(message.author.id) in WHITELIST):
-            await message.channel.send("Sorry, you are not whitelisted")
+            await message.channel.send("Sorry, you are not whitelisted, DM Harro if you want to be.")
             return
         
         await process_msg(message)

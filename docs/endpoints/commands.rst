@@ -1,8 +1,29 @@
+help
+====
+    Displays a little help message.
+
+    * ``help``
+
+alert
+=====
+    Makes the sense_hat blink rapidly for two seconds
+
+    * ``alert``
+
 echo <message>
 ==============
     Echos a message and desplays it on the sense_hat
 
     * ``echo <message>``
+
+configure <parameter> <value>
+=============================
+
+    Changes the configuration of Harrito.
+    For the list of available parameters, see the Config section.
+    Usage example:
+
+    * ``configure display_mode show_errors``
 
 get <resource>
 ==============
@@ -16,11 +37,9 @@ get <resource>
     * ``get humidity``
     * ``get pressure``
 
-configure <parameter> <value>
-=============================
+shell [args]
+============
+    Runs a shell command in the bot's directory and displays its output.
+    This command is usable by some users only.
 
-    Changes the configuration of Harrito.
-    For the list of available parameters, see the Config section.
-    Usage example:
-
-    * ``configure display_mode show_errors``
+    * ``shell [args]``
