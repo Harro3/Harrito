@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>help &mdash; Harrito  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CONFIG" href="../config/index.html" />
+    <link rel="prev" title="About endpoints" href="content.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Harrito
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Harrito’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ENDPOINTS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="content.html">About endpoints</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="content.html#commands">Commands</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alert">alert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#echo-message">echo &lt;message&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-parameter-value">configure &lt;parameter&gt; &lt;value&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-resource">get &lt;resource&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell-args">shell [args]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">CONFIG</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Harrito</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ENDPOINTS</a></li>
+          <li class="breadcrumb-item"><a href="content.html">About endpoints</a></li>
+      <li class="breadcrumb-item active">help</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/endpoints/commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="help">
+<h1>help<a class="headerlink" href="#help" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Displays a little help message.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">help</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="alert">
+<h1>alert<a class="headerlink" href="#alert" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Makes the sense_hat blink rapidly for two seconds</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alert</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="echo-message">
+<h1>echo &lt;message&gt;<a class="headerlink" href="#echo-message" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Echos a message and desplays it on the sense_hat</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&lt;message&gt;</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="configure-parameter-value">
+<h1>configure &lt;parameter&gt; &lt;value&gt;<a class="headerlink" href="#configure-parameter-value" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Changes the configuration of Harrito.
+For the list of available parameters, see the Config section.
+Usage example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">display_mode</span> <span class="pre">show_errors</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="get-resource">
+<h1>get &lt;resource&gt;<a class="headerlink" href="#get-resource" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Retrieves some information about Harrito
+possible commands are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">ip</span></code> - returns Harrito’s local ip address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">config</span></code> - returns Harrito’s configuration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">temerature</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">humidity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">pressure</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="shell-args">
+<h1>shell [args]<a class="headerlink" href="#shell-args" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p>Runs a shell command in the bot’s directory and displays its output.
+This command is usable by some users only.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shell</span> <span class="pre">[args]</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="content.html" class="btn btn-neutral float-left" title="About endpoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../config/index.html" class="btn btn-neutral float-right" title="CONFIG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Harro.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
