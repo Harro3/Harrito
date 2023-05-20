@@ -8,7 +8,7 @@ from frames.command import Command
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-OWNER = os.getenv('BOT_OWNER_ID')
+WHITELIST = os.getenv('WHITELIST').split(" ")
 
 
 async def process_msg(message):
@@ -37,14 +37,19 @@ class MyClient(discord.Client):
             return
         
         if str(message.channel.type) != 'private':
-            return
+            if (message.content[0] != "!"):
+                return
         
-        if (message.author.id != int(OWNER)):
+        if (message.content[0] == "!"):
+            message.content = message.content[1:]
+        
+        if (not str(message.author.id) in WHITELIST):
+            await message.channel.send("Sorry, you are not whitelisted")
             return
         
         await process_msg(message)
 
-client = MyClient(intents=discord.Intents.default())
+client = MyClient(intents=discord.Intents.all())
 hardware_init()
 
 client.run(TOKEN)
